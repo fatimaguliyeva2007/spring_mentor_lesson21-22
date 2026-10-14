@@ -2,6 +2,7 @@ package com.example.matrix_java_mentor_2.service.impl;
 
 import com.example.matrix_java_mentor_2.entity.SpeakerEntity;
 import com.example.matrix_java_mentor_2.entity.TalkEntity;
+import com.example.matrix_java_mentor_2.enums.TalkStatus;
 import com.example.matrix_java_mentor_2.exception.BusinessRuleException;
 import com.example.matrix_java_mentor_2.exception.ResourceNotFoundException;
 import com.example.matrix_java_mentor_2.mapper.TalkMapper;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 
 @Slf4j
 @Service
@@ -46,6 +48,7 @@ public class TalkService {
 
         TalkEntity talk = talkMapper.toEntity(requestDto);
         talk.setSpeaker(speaker);
+        talk.setStatus(TalkStatus.SCHEDULED);
         TalkEntity savedTalk = talkRepository.save(talk);
         log.info("Talk created successfully with id: {}", savedTalk.getId());
         return talkMapper.toDto(savedTalk);

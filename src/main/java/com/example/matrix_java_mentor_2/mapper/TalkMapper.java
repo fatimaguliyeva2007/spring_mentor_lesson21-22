@@ -13,6 +13,7 @@ import java.util.List;
 public interface TalkMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "speaker", ignore = true)
+    @Mapping(target = "status", ignore = true)
     TalkEntity toEntity(TalkRequestDto dto);
 
     @Mapping(source = "speaker.id", target = "speakerId")
@@ -23,6 +24,6 @@ public interface TalkMapper {
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "speaker", ignore = true)
+    @Mapping(target = "status", ignore = true)
     void updateEntity(TalkRequestDto dto, @MappingTarget TalkEntity talk);
-
 }

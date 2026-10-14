@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +23,8 @@ public class TalkRequestDto {
     private Integer durationMinutes;
     @NotNull
     private Long speakerId;
+    @NotNull
+    private LocalDateTime scheduledAt;
 }
 //title, room, durationMinutes, speakerId
 
