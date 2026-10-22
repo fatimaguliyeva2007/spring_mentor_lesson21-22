@@ -19,7 +19,7 @@ import java.util.List;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class SpeakerService {
+public class SpeakerService{
     private final SpeakerRepository speakerRepository;
     private final SpeakerMapper speakerMapper;
     private final TalkMapper talkMapper;
